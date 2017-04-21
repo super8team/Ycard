@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.helloworld.test">
+    package="com.ycard.phonegap.test">
 
-    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="25" />
 
     <application>
         <uses-library android:name="android.test.runner" />
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.example.helloworld"
+                     android:targetPackage="com.ycard.phonegap"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for com.example.helloworld"/>
+                     android:label="Tests for com.ycard.phonegap"/>
 </manifest>

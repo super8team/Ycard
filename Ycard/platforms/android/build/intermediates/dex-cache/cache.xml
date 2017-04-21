@@ -3,12 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="D:\JINA\hybridapp\hello\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
+        jar="D:\JINA\ycard\Ycard\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="afe8eb4906b94df000e2b3714c864ec42d4e4ea6">
-        <dex dex="D:\JINA\hybridapp\hello\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_cd34a848aaff7d0e0a2218df8de491610e6e7864.jar" />
+        <dex dex="D:\JINA\ycard\Ycard\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_58aa3ef91ce95f86bc0c0fc99ee5c6584a4ee21c.jar" />
     </item>
 
 </items>

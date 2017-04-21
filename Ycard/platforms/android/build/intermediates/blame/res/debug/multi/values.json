@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\JINA\\hybridapp\\hello\\platforms\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "outputFile": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 114
                 },
                 "from": {
-                    "file": "D:\\JINA\\hybridapp\\hello\\platforms\\android\\res\\values\\strings.xml",
+                    "file": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 162,
+                        "startOffset": 157,
                         "endColumn": 63,
-                        "endOffset": 221
+                        "endOffset": 216
                     }
                 }
             },
@@ -26,17 +26,17 @@
                     "startLine": 3,
                     "startColumn": 4,
                     "startOffset": 119,
-                    "endColumn": 47,
-                    "endOffset": 162
+                    "endColumn": 42,
+                    "endOffset": 157
                 },
                 "from": {
-                    "file": "D:\\JINA\\hybridapp\\hello\\platforms\\android\\res\\values\\strings.xml",
+                    "file": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
                         "startOffset": 55,
-                        "endColumn": 47,
-                        "endOffset": 98
+                        "endColumn": 42,
+                        "endOffset": 93
                     }
                 }
             },
@@ -44,18 +44,18 @@
                 "to": {
                     "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 167,
+                    "startOffset": 162,
                     "endColumn": 58,
-                    "endOffset": 221
+                    "endOffset": 216
                 },
                 "from": {
-                    "file": "D:\\JINA\\hybridapp\\hello\\platforms\\android\\res\\values\\strings.xml",
+                    "file": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 103,
+                        "startOffset": 98,
                         "endColumn": 58,
-                        "endOffset": 157
+                        "endOffset": 152
                     }
                 }
             }
