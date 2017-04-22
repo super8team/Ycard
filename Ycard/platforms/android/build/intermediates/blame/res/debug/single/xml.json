@@ -1,6 +1,18 @@
 [
     {
-        "merged": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\config.xml",
-        "source": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\res\\xml\\config.xml"
+        "merged": "D:\\android\\camera\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\config.xml",
+        "source": "D:\\android\\camera\\platforms\\android\\res\\xml\\config.xml"
+    },
+    {
+        "merged": "D:\\android\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\config.xml",
+        "source": "D:\\android\\ycard\\Ycard\\platforms\\android\\res\\xml\\config.xml"
+    },
+    {
+        "merged": "D:\\android\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\provider_paths.xml",
+        "source": "D:\\android\\ycard\\Ycard\\platforms\\android\\res\\xml\\provider_paths.xml"
+    },
+    {
+        "merged": "D:\\android\\camera\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\xml\\provider_paths.xml",
+        "source": "D:\\android\\camera\\platforms\\android\\res\\xml\\provider_paths.xml"
     }
 ]

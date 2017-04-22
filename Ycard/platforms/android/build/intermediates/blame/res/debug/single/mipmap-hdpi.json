@@ -1,6 +1,10 @@
 [
     {
-        "merged": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\icon.png",
-        "source": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\res\\mipmap-hdpi\\icon.png"
+        "merged": "D:\\android\\camera\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\icon.png",
+        "source": "D:\\android\\camera\\platforms\\android\\res\\mipmap-hdpi\\icon.png"
+    },
+    {
+        "merged": "D:\\android\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\icon.png",
+        "source": "D:\\android\\ycard\\Ycard\\platforms\\android\\res\\mipmap-hdpi\\icon.png"
     }
 ]

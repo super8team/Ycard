@@ -1,6 +1,10 @@
 [
     {
-        "merged": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi\\screen.png",
-        "source": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\res\\drawable-port-xhdpi\\screen.png"
+        "merged": "D:\\android\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi\\screen.png",
+        "source": "D:\\android\\ycard\\Ycard\\platforms\\android\\res\\drawable-port-xhdpi\\screen.png"
+    },
+    {
+        "merged": "D:\\android\\camera\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi\\screen.png",
+        "source": "D:\\android\\camera\\platforms\\android\\res\\drawable-port-xhdpi\\screen.png"
     }
 ]

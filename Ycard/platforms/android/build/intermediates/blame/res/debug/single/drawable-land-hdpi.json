@@ -1,6 +1,10 @@
 [
     {
-        "merged": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-land-hdpi\\screen.png",
-        "source": "D:\\JINA\\ycard\\Ycard\\platforms\\android\\res\\drawable-land-hdpi\\screen.png"
+        "merged": "D:\\android\\camera\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-land-hdpi\\screen.png",
+        "source": "D:\\android\\camera\\platforms\\android\\res\\drawable-land-hdpi\\screen.png"
+    },
+    {
+        "merged": "D:\\android\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-land-hdpi\\screen.png",
+        "source": "D:\\android\\ycard\\Ycard\\platforms\\android\\res\\drawable-land-hdpi\\screen.png"
     }
 ]

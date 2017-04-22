@@ -1,34 +1,48 @@
 
-
+var pre_img;
 
 function change_img(std_img_id) {
 
 
-  var destinationType = navigator.camera.DestinationType;
-  var pre_img = document.getElementById(std_img_id);
-  var user_plag = false;
+  pre_img = document.getElementById(std_img_id);
+  var source;
 
 
   // 사진 얻을 방법 선택 부분
   // 버튼 선택하게 함
+  $("body").append('<div id="dialog-confirm" title="고르세요 ㅎ.ㅎ">'+
+                    '</div>');
 
-  // 사진 선택 부분
-  // 사진찍기를 누르면
-  // if(user_plag)
-//     Camera.sourceType = navigator.camera.PictureSourceType.CAMERA;
-  // // 앨범에서 선택을 누르면
-  // else
-      Camera.sourceType = navigator.camera.PictureSourceType.PHOTOLIBRARY;
+   $( "#dialog-confirm" ).dialog({
+      resizable: false,
+      height: "auto",
+      width: 400,
+      modal: true,
+      buttons: {
+        "촬영ㅎ.ㅎ": function() {
+          source = navigator.camera.PictureSourceType.CAMERA;
+          getPhoto(source);
+          $(this).dialog( "close" );
+        },
+        "앨범에서선택ㅎ.ㅎ": function() {
+          source = navigator.camera.PictureSourceType.PHOTOLIBRARY;
+          getPhoto(source);
+          $(this).dialog( "close" );
+        }
+      }
+    });
+}
 
 
-  // 사진 얻음
-  navigator.camera.getPicture(onSuccess, onFail, {quality: 50, destinationType: destinationType.FILE_URI, sourceType: Camera.sourceType});
-
+function getPhoto(source) {
+ // 사진 얻음
+  var destinationType = navigator.camera.DestinationType;
+  Camera.sourceType = source;
+  navigator.camera.getPicture(onSuccess, onFail, {quality: 50, destinationType: destinationType.FILE_URI, correctOrientation: true, sourceType: Camera.sourceType});
 }
 
 // 성공, 사진 수정해줌
 function onSuccess(imageData) {
-alert(destinationType);
   pre_img.src = imageData;
 }
 

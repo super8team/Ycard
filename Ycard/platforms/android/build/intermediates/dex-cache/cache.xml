@@ -3,12 +3,39 @@
 
     <item
         is-multidex="false"
-        jar="D:\JINA\ycard\Ycard\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
+        jar="C:\Users\mycom\AppData\Local\Android\sdk1\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="D:\android\ycard\Ycard\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-24.1.1_b67d8228f50930ac848e4288298db73b4865c062.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\ycard\Ycard\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="D:\android\ycard\Ycard\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.1.1_1f00e99e8ea509444efd9c1ef2b9a1602fbfe2af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\ycard\Ycard\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.2"
         sha1="afe8eb4906b94df000e2b3714c864ec42d4e4ea6">
-        <dex dex="D:\JINA\ycard\Ycard\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_58aa3ef91ce95f86bc0c0fc99ee5c6584a4ee21c.jar" />
+        <dex dex="D:\android\ycard\Ycard\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_bf7d5742a55b6d5fe43bdd2709e0d7d77870e77a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\android\ycard\Ycard\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="D:\android\ycard\Ycard\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-24.1.1_74e7cf52a715430039af7cec3461b4e2e58ae97a.jar" />
     </item>
 
 </items>
