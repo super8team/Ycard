@@ -38,7 +38,7 @@
           <ul class="nav navbar-nav">
             <li class><a href="#">Member</a></li>
             <!-- 학생별로 밑에 태그 이름 바꾸기 -->
-            <li class="dropdown-header">정연제</li>
+            <li class="dropdown-header"></li>
             <li><input type="button" class="active" value="수정 완료"></li>
             <!-- <li class="active">학생정보 수정</a></li> -->
           </ul>
@@ -53,14 +53,11 @@
         </div>
         <div class="row">
           <div class="col-lg-4">
-            <input id="std_img" type="image" src="../public/img/charactor/char01.jpg" class="img-circle" name="std_img" onclick="change_img(this.id);" style="width: 140px; height: 140px" >
-            <!-- <img class="img-circle" src="../public/img/charactor/char01.jpg" alt="Generic placeholder image" style="width: 140px; height: 140px;"> -->
+            <input id="std_img" type="image" src="" class="img-circle" name="std_img" onclick="change_img(this.id);" style="width: 140px; height: 140px" >
 
             <h2>이름 :<input id="std_name" type="text" name="std_name" style="width:140px; height:40px;" value="aa"></h2>
-            <!-- <h2 id="std_name1">권유성</h2> -->
 
             <p><h2>학번 :<input id="std_serial" type="text" name="std_serial" style="width:140px; height:40px;" value="aa"></p>
-            <!-- <p>학번 : 1301016</p> -->
 
             <p>학과 : 컴퓨터 정보 계열 </p></h2>
           </div><!-- /.col-lg-4 -->
@@ -109,17 +106,17 @@
       var request = new Request();
 
       $(document).ready(function() {
-        $('.dropdown-header').val(request.getParameter('std_name')),
         $('#std_name').val(request.getParameter('std_name')),
         $('#std_serial').val(request.getParameter('std_serial')),
         $('#date').val(request.getParameter('date')),
         $('#std_img').attr('src',request.getParameter('std_img')),
+        $('.dropdown-header').val(request.getParameter('std_name')),
       });
 
       $('.active').click(function(){
           $.ajax({
             type : "GET",
-            url : "http://127.0.0.1/list.php",
+            url : "http://127.0.0.1/list.php",    //서버 수정.php
             dataType : 'jsonp',
             jsonp : 'callback',         //서버에서 받는 함수명!
                                         //적어준 함수명은 ajax 호출 url뒤에다가 파마메타 형식으로 붙음
@@ -129,6 +126,9 @@
               date       : $("#date").val(),
               std_img    : $("#std_img").attr("src"),
             },
+            //ajax로 수정 될 값을 보내서 수정을 한다
+            //그리고 수정을 완료 하면 전 페이지로 돌아간다.
+            //pk인 학번을 사용해서
             success : function(data){
               console.log(data);
               $(location).attr('href','http://127.0.0.1/YGdetail.html/');
