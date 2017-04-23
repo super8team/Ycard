@@ -33,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button><!-- 아이콘 끝 -->
-          <a class="navbar-brand" href="#">YGcard</a>
+          <a class="navbar-brand" href="index.html">YGcard</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -70,7 +70,7 @@
           </div>
 
           <div class="col-xs-4">
-            <img class="img-circle" src="./"
+            <img class="img-circle" src="http://172.19.1.17:80/Ycard/YcardServer/public/stamp.png"
             alt="도장 사진" style="width: 70px; height: 70px;">
           </div>
 
@@ -83,13 +83,13 @@
       </footer>
 
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-<<<<<<< HEAD
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD
+<<<<<<< HEAD -->
     <script src="./js/bootstrap.min.js"></script>
-=======
+<!-- =======
 >>>>>>> 292e73d79458d51154a6c1cbd6b11e03dbbd99db
 =======
->>>>>>> 292e73d79458d51154a6c1cbd6b11e03dbbd99db
+>>>>>>> 292e73d79458d51154a6c1cbd6b11e03dbbd99db -->
     <script>
       //파라미터 값들 받아온다
       var Request = function () {
@@ -112,7 +112,7 @@
 
       $(document).ready(function() {
         $('#std_name').val(request.getParameter('std_name'));
-        $('#std_serial').val(request.getParameter('std_serial'));
+        var osnum = $('#std_serial').val(request.getParameter('std_serial'));
         $('#date').val(request.getParameter('date'));
         $('#std_img').attr('src',request.getParameter('std_img'));
         $('.dropdown-header').val(request.getParameter('std_name'));
@@ -121,22 +121,23 @@
       $('.active').click(function(){
           $.ajax({
             type : "GET",
-            url : "http://127.0.0.1/ygdetail.php",    //서버 수정.php
+            url : "http://172.19.1.17:80/Ycard/YcardServer/public/updateStudent",    //서버 수정.php
             dataType : 'jsonp',
-            jsonp : 'callback',         //서버에서 받는 함수명!
+          //  jsonp : 'callback',         //서버에서 받는 함수명!
                                         //적어준 함수명은 ajax 호출 url뒤에다가 파마메타 형식으로 붙음
             data : {
-              std_name   : $("#std_name").val(),
-              std_serial : $("#std_serial").val(),
+              sname   : $("#std_name").val(),
+              osnum  : osnum,
+              snum : $("#std_serial").val(),
               date       : $("#date").val(),
-              std_img    : $("#std_img").attr("src"),
+              image    : $("#std_img").attr("src"),
             },
             //ajax로 수정 될 값을 보내서 수정을 한다
             //그리고 수정을 완료 하면 전 페이지로 돌아간다.
             //pk인 학번을 사용해서
             success : function(data){
               console.log(data);
-              $(location).attr('href','YGdetail.html?student='+$("#std_serial").val());
+              $(location).attr('href','http://172.19.1.17:80/Ycard/YcardServer/public/detail?student='+$("#std_serial").val());
               // $(location).attr('href','http://127.0.0.1/YGdetail.html');
             }
           });

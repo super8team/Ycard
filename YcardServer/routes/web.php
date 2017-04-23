@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('detail','CardController@detailView');
+Route::get('listView','CardController@listView');
+Route::get('updateStudent','CardController@updateStudent');
+Route::get('listTeam','CardController@listTeam');
+Route::get('listMember','CardController@listMember');
