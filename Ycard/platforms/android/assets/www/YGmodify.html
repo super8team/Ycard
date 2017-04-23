@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/jquery-ui.css">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="cordova.js"></script>
     <script src="cordova_plugins.js"></script>
     <script src="js/camera.js"></script>
@@ -69,7 +70,7 @@
           </div>
 
           <div class="col-xs-4">
-            <img class="img-circle" src="../public/img/charactor/char01.jpg"
+            <img class="img-circle" src="./"
             alt="도장 사진" style="width: 70px; height: 70px;">
           </div>
 
@@ -81,10 +82,14 @@
         </div>
       </footer>
 
-    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-    <script src="../js/bootstrap.min.js"></script>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <script src="./js/bootstrap.min.js"></script>
+=======
+>>>>>>> 292e73d79458d51154a6c1cbd6b11e03dbbd99db
+=======
+>>>>>>> 292e73d79458d51154a6c1cbd6b11e03dbbd99db
     <script>
       //파라미터 값들 받아온다
       var Request = function () {
@@ -106,17 +111,17 @@
       var request = new Request();
 
       $(document).ready(function() {
-        $('#std_name').val(request.getParameter('std_name')),
-        $('#std_serial').val(request.getParameter('std_serial')),
-        $('#date').val(request.getParameter('date')),
-        $('#std_img').attr('src',request.getParameter('std_img')),
-        $('.dropdown-header').val(request.getParameter('std_name')),
+        $('#std_name').val(request.getParameter('std_name'));
+        $('#std_serial').val(request.getParameter('std_serial'));
+        $('#date').val(request.getParameter('date'));
+        $('#std_img').attr('src',request.getParameter('std_img'));
+        $('.dropdown-header').val(request.getParameter('std_name'));
       });
 
       $('.active').click(function(){
           $.ajax({
             type : "GET",
-            url : "http://127.0.0.1/list.php",    //서버 수정.php
+            url : "http://127.0.0.1/ygdetail.php",    //서버 수정.php
             dataType : 'jsonp',
             jsonp : 'callback',         //서버에서 받는 함수명!
                                         //적어준 함수명은 ajax 호출 url뒤에다가 파마메타 형식으로 붙음
@@ -131,7 +136,8 @@
             //pk인 학번을 사용해서
             success : function(data){
               console.log(data);
-              $(location).attr('href','http://127.0.0.1/YGdetail.html/');
+              $(location).attr('href','YGdetail.html?student='+$("#std_serial").val());
+              // $(location).attr('href','http://127.0.0.1/YGdetail.html');
             }
           });
         });

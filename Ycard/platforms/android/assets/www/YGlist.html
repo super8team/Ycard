@@ -24,16 +24,17 @@
       $(document).ready(function(){
         //서버에서 학생들 사진경로,이름을 받아온다.
         $.ajax({
-          url : 'http://127.0.0.1/jsonp.php',
+          url : 'http://127.0.0.1/yglist.php',
           dataType : "jsonp",
           jsonp : "callback",
           success:function(data){
             console.log(data);
             for(var i=0;i<data.length;i++){
               $('#std_name'+(i+1)).empty().append(data[i].name);
+              $('#std_name'+(i+1)).attr({onclick : 'moveToDetail('+data[i].num+')'});
               $('#std_img'+(i+1)).attr({src : data[i].img});
             }
-          } 
+          }
         });
       });
 
@@ -73,32 +74,32 @@
 
           <div class="col-xs-4">
             <img id="std_img1" class="img-circle" src="" style="width: 70px; height: 70px;">
-            <p><button onclick="moveToDetail(1)" class="btn btn-default" type="submit" id="std_name1">이진아</button></p>
+            <p><button class="btn btn-default" type="submit" id="std_name1">이진아</button></p>
           </div><!-- /.col-lg-4 -->
 
           <div class="col-xs-4">
             <img id="std_img2" class="img-circle" src="" style="width: 70px; height: 70px;">
-            <p><button onclick="moveToDetail(2)" class="btn btn-default" type="submit" id="std_name2">조규승</button></p>
+            <p><button class="btn btn-default" type="submit" id="std_name2">조규승</button></p>
           </div><!-- /.col-lg-4 -->
 
           <div class="col-xs-4">
             <img id="std_img3" class="img-circle" src="" style="width: 70px; height: 70px;">
-            <p><button onclick="moveToDetail(3)" class="btn btn-default" type="submit" id="std_name3">박성원</button></p>
+            <p><button class="btn btn-default" type="submit" id="std_name3">박성원</button></p>
           </div><!-- /.col-lg-4 -->
 
           <div class="col-xs-4">
             <img id="std_img4" class="img-circle" src="" style="width: 70px; height: 70px;">
-            <p><button onclick="moveToDetail(4)" class="btn btn-default" type="submit" id="std_name4">김선중</button></p>
+            <p><button class="btn btn-default" type="submit" id="std_name4">김선중</button></p>
           </div><!-- /.col-lg-4 -->
 
           <div class="col-xs-4">
             <img id="std_img5" class="img-circle" src="" style="width: 70px; height: 70px;">
-            <p><button onclick="moveToDetail(5)" class="btn btn-default" type="submit" id="std_name5">정연제</button></p>
+            <p><button class="btn btn-default" type="submit" id="std_name5">정연제</button></p>
           </div><!-- /.col-lg-4 -->
 
           <div class="col-xs-4">
             <img id="std_img6" class="img-circle" src="" style="width: 70px; height: 70px;">
-            <p><button onclick="moveToDetail(6)" class="btn btn-default" type="submit" id="std_name6">권유성</button></p>
+            <p><button class="btn btn-default" type="submit" id="std_name6">권유성</button></p>
           </div><!-- /.col-lg-4 -->
 
         </div>
