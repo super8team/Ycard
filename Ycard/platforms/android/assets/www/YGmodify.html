@@ -56,11 +56,11 @@
           <div class="col-lg-4">
             <input id="std_img" type="image" src="" class="img-circle" name="std_img" onclick="change_img(this.id);" style="width: 140px; height: 140px" >
 
-            <h2>이름 :<input id="std_name" type="text" name="std_name" style="width:140px; height:40px;" value="aa"></h2>
+            <h2>이름 :<input id="std_name" type="text" name="std_name" style="width:140px; height:40px;"></h2>
 
-            <p><h2>학번 :<input id="std_serial" type="text" name="std_serial" style="width:140px; height:40px;" value="aa"></p>
+            <p><h2>학번 :<input id="std_serial" type="text" name="std_serial" style="width:140px; height:40px;"></p>
 
-            <p>학과 : 컴퓨터 정보 계열 </p></h2>
+            <p>학과 : <input id="std_major" type="text" name="std_major" style="width:140px; height:40px;"></p></h2>
           </div><!-- /.col-lg-4 -->
 
           <div class="col-xs-7 text-left">
@@ -115,6 +115,7 @@
         $('#std_name').val(request.getParameter('std_name'));
         $('#std_serial').val(request.getParameter('std_serial'));
         $('#date').val(request.getParameter('date'));
+        $('#std_major').val(request.getParameter('std_major'));
         $('#std_img').attr('src',request.getParameter('std_img'));
         $('.dropdown-header').val(request.getParameter('std_name'));
         var std_id = request.getParameter('std_id')
@@ -162,10 +163,11 @@
                                           //적어준 함수명은 ajax 호출 url뒤에다가 파마메타 형식으로 붙음
               data : {
                 id : std_id,
-                sname   : $("#std_name").val(),
-                snum : $("#std_serial").val(),
-                date       : $("#date").val(),
-                image    : imageName,
+                sname     : $("#std_name").val(),
+                snum      : $("#std_serial").val(),
+                date      : $("#date").val(),
+                major     : $("#std_major").val(),
+                image     : imageName,
 
               },
               //ajax로 수정 될 값을 보내서 수정을 한다
