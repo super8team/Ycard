@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\bon\\Desktop\\Ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi\\screen.png",
+        "source": "C:\\Users\\bon\\Desktop\\Ycard\\Ycard\\platforms\\android\\res\\drawable-port-xhdpi\\screen.png"
+    },
+    {
         "merged": "D:\\android\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi\\screen.png",
         "source": "D:\\android\\ycard\\Ycard\\platforms\\android\\res\\drawable-port-xhdpi\\screen.png"
     },

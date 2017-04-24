@@ -1,6 +1,7 @@
 
 var pre_img;
-
+var options= {};
+  document.addEventListener("deviceready", onDeviceReady, false);
 function change_img(std_img_id) {
 
 
@@ -34,16 +35,40 @@ function change_img(std_img_id) {
 }
 
 
+  function onDeviceReady() {
+    window.alert('옵션전');
+    options = new FileUploadOptions();
+    window.alert('옵션후');
+  }
+
 function getPhoto(source) {
  // 사진 얻음
   var destinationType = navigator.camera.DestinationType;
   Camera.sourceType = source;
-  navigator.camera.getPicture(onSuccess, onFail, {quality: 50, destinationType: destinationType.FILE_URI, correctOrientation: true, sourceType: Camera.sourceType});
+  navigator.camera.getPicture(uploadPhoto, onFail, {quality: 50, destinationType: destinationType.FILE_URI, correctOrientation: true, sourceType: Camera.sourceType});
 }
 
 // 성공, 사진 수정해줌
 function onSuccess(imageData) {
   pre_img.src = imageData;
+
+
+}
+function uploadPhoto(imageURI) {
+    var options = new FileUploadOptions();
+    window.alert('성공');
+    options.fileKey="file";
+    options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+    options.mimeType="image/jpeg";
+
+    var params = new Object();
+    params.value1 = "test";
+    params.value2 = "param";
+
+    options.params = params;
+
+    var ft = new FileTransfer();
+    ft.upload(imageURI, "http://172.19.1.17:80/Ycard/YcardServer/public/imgUpload", win, fail, options);
 }
 
 // 실패, 실패알림 메세지 띄우고 소스 초기화

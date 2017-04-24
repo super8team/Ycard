@@ -37,8 +37,48 @@ class CardController extends BaseController
 
     public function updateStudent(Request $req){ // 학생 업데이트
         $student = new Student;
-        $user = $student->updateStudent($req->get('sname'),$req->get('osnum'),$req->get('snum'),$req->get('date'),$req->get('image'));
+
+        // // DB에 저장을 위해 file네임 받아옴
+        //     $file_name = $_FILES["file"]["name"];
+        //       $req->file('image')
+        //     $target_dir = "images/".$file_name; //업로드 경로
+
+            // $imageName = $req->file('image')->getClientOriginalExtension();
+            //
+            //    $req->file('image')->move(
+            //        base_path() . '/public/', $imageName
+            //    );
+
+            // 임시경로의 파일을 옮김
+            //move_uploaded_file($_FILES["file"]["tmp_name"], $target_dir);
+
+        //$user = $student->updateStudent($req->get('sname'),$req->get('id'),$req->get('snum'),$req->get('date'));
+        $user = $student->updateStudent($req->get('sname'),$req->get('id'),$req->get('snum'),$req->get('date'),$req->get('image'));
+        //$user = $student->updateStudent($req->get('sname'),$req->get('snum'),$req->get('date'));
         //return response()->json($user);
+
+
+
+        return $req->get('callback')."(".$user.")";
+
+    }
+
+    public function imgUpload(Request $req){ //사진업로드
+
+      // $imageName = $req->file('name')->getClientOriginalExtension();
+      //
+      //    $req->file('tmp_name')->move(
+      //        base_path() . '/', $imageName
+      //    );
+
+         // DB에 저장을 위해 file네임 받아옴
+             $file_name = $_FILES["file"]["name"];
+
+             $target_dir = "/".$file_name; //업로드 경로
+
+
+             //임시경로의 파일을 옮김
+             move_uploaded_file($_FILES["file"]["tmp_name"], $target_dir);
 
     }
 

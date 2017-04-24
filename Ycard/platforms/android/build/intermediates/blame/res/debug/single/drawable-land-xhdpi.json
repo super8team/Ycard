@@ -6,5 +6,9 @@
     {
         "merged": "D:\\android\\camera\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-land-xhdpi\\screen.png",
         "source": "D:\\android\\camera\\platforms\\android\\res\\drawable-land-xhdpi\\screen.png"
+    },
+    {
+        "merged": "C:\\Users\\bon\\Desktop\\Ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-land-xhdpi\\screen.png",
+        "source": "C:\\Users\\bon\\Desktop\\Ycard\\Ycard\\platforms\\android\\res\\drawable-land-xhdpi\\screen.png"
     }
 ]

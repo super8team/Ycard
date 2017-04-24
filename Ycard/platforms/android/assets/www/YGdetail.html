@@ -26,6 +26,7 @@
 
     $(document).ready(function(){
       var snum = location.href.substr(location.href.lastIndexOf('=') +1);
+      var id=0;
       // 서버에서 학생들 사진경로,이름을 받아온다.
       $.ajax({
         url : 'http://172.19.1.17:80/Ycard/YcardServer/public/detail',
@@ -33,6 +34,8 @@
         data : { snum : snum },
         success:function(data){
           console.log(data);
+          id = data[0].id;
+          
             $('#std_name1').empty().append(data[0].sname);
             $('#std_name2').empty().append(data[0].sname);
             $('#std_serial').empty().append(data[0].snum);
@@ -49,7 +52,7 @@
         // console.log($('#std_serial')[0].innerText);
         // console.log($('#std_date')[0].innerText);
         // console.log($('#std_img')[0].src);
-        window.location.href="YGmodify.html?std_name="+$('#std_name2')[0].innerText+
+        window.location.href="YGmodify.html?std_id="+id+"&std_name="+$('#std_name2')[0].innerText+
                               "&std_serial="+$('#std_serial')[0].innerText+
                               "&date="+$('#std_date')[0].innerText+
                               "&std_img="+$('#std_img')[0].src;
