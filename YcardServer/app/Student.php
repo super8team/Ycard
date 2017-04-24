@@ -37,6 +37,7 @@ class Student extends Authenticatable
     }
 
     public function updateStudent($sname='test',$dname='test',$id=0,$snum=1,$date='1'){
+
       //$student = Self::findOrFail($snum);
        $student = Self::where('id',$id)->update([
          'sname' => $sname,

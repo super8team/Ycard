@@ -56,9 +56,9 @@
           <div class="col-lg-4">
             <input id="std_img" type="image" src="" class="img-circle" name="std_img" onclick="change_img(this.id);" style="width: 140px; height: 140px" >
 
-            <h2>이름 :<input id="std_name" type="text" name="std_name" style="width:140px; height:40px;" value="aa"></h2>
+            <h2>이름 :<input id="std_name" type="text" name="std_name" style="width:140px; height:40px;"></h2>
 
-            <p><h2>학번 :<input id="std_serial" type="text" name="std_serial" style="width:140px; height:40px;" value="aa"></p>
+            <p><h2>학번 :<input id="std_serial" type="text" name="std_serial" style="width:140px; height:40px;"></p>
 
             <p>학과 : <input id="std_major" type="text" name="std_major" style="width:140px; height:40px;"></p></h2>
           </div><!-- /.col-lg-4 -->
@@ -83,13 +83,7 @@
       </footer>
 
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-<!-- <<<<<<< HEAD
-<<<<<<< HEAD -->
 
-<!-- =======
->>>>>>> 292e73d79458d51154a6c1cbd6b11e03dbbd99db
-=======
->>>>>>> 292e73d79458d51154a6c1cbd6b11e03dbbd99db -->
     <script>
       //파라미터 값들 받아온다
       var Request = function () {
@@ -115,6 +109,7 @@
         $('#std_name').val(request.getParameter('std_name'));
         $('#std_serial').val(request.getParameter('std_serial'));
         $('#date').val(request.getParameter('date'));
+        $('#std_major').val(request.getParameter('std_major'));
         $('#std_img').attr('src',request.getParameter('std_img'));
         $('.dropdown-header').val(request.getParameter('std_name'));
         $('#std_major').val(request.getParameter('std_major'));
@@ -255,6 +250,7 @@
     //       function fail(error){
     //           window.alert("사진업로드실패");
     //       }
+
 
     </script>
 

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\bon\\Desktop\\Ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\icon.png",
+        "source": "C:\\Users\\bon\\Desktop\\Ycard\\Ycard\\platforms\\android\\res\\mipmap-xhdpi\\icon.png"
+    },
+    {
         "merged": "D:\\android\\ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\icon.png",
         "source": "D:\\android\\ycard\\Ycard\\platforms\\android\\res\\mipmap-xhdpi\\icon.png"
     },
