@@ -25,7 +25,7 @@
         //window.alert('아작스실행');
         //서버에서 학생들 사진경로,이름을 받아온다.
         $.ajax({
-          url : 'http://172.19.1.17:80/Ycard/YcardServer/public/listMember',
+          url : 'http://172.19.1.245:80/Ycard/YcardServer/public/listMember',
           dataType : "jsonp",
           jsonp : "callback",
           success:function(data){
@@ -35,7 +35,7 @@
             for(var i=0;i<data.length;i++){
               $('#std_name'+(i+1)).empty().append(data[i].sname);
               $('#std_name'+(i+1)).attr({onclick : 'moveToDetail('+data[i].snum+')'});
-              $('#std_img'+(i+1)).attr({src : 'http://172.19.1.17:80/Ycard/YcardServer/public/'+ data[i].image});
+              $('#std_img'+(i+1)).attr({src : 'http://172.19.1.245:80/Ycard/YcardServer/public/'+ data[i].image});
             }
           },
           error:function(){

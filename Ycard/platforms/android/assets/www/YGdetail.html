@@ -26,18 +26,22 @@
 
     $(document).ready(function(){
       var snum = location.href.substr(location.href.lastIndexOf('=') +1);
+      var id=0;
       // 서버에서 학생들 사진경로,이름을 받아온다.
       $.ajax({
-        url : 'http://172.19.1.17:80/Ycard/YcardServer/public/detail',
+        url : 'http://172.19.1.245:80/Ycard/YcardServer/public/detail',
         dataType : "jsonp",
         data : { snum : snum },
         success:function(data){
           console.log(data);
+          id = data[0].id;
+
             $('#std_name1').empty().append(data[0].sname);
             $('#std_name2').empty().append(data[0].sname);
             $('#std_serial').empty().append(data[0].snum);
             $('#std_date').empty().append(data[0].date);
-            $('#std_img').attr({src : 'http://172.19.1.17:80/Ycard/YcardServer/public/'+ data[0].image});
+            $('#std_major').empty().append(data[0].dname);
+            $('#std_img').attr({src : 'http://172.19.1.245:80/Ycard/YcardServer/public/'+ data[0].image});
 
         }
       });
@@ -49,10 +53,11 @@
         // console.log($('#std_serial')[0].innerText);
         // console.log($('#std_date')[0].innerText);
         // console.log($('#std_img')[0].src);
-        window.location.href="YGmodify.html?std_name="+$('#std_name2')[0].innerText+
-                              "&std_serial="+$('#std_serial')[0].innerText+
-                              "&date="+$('#std_date')[0].innerText+
-                              "&std_img="+$('#std_img')[0].src;
+        window.location.href="YGmodify.html?std_id="+id+"&std_name="+$('#std_name2')[0].innerText+
+                                      "&std_serial="+$('#std_serial')[0].innerText+
+                                      "&date="+$('#std_date')[0].innerText+
+                                      "&std_major="+$('#std_major')[0].innerText+
+                                      "&std_img="+$('#std_img')[0].src;
       });
     });
   </script>
@@ -81,7 +86,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
+  </br>
       <!-- Begin page content -->
       <form id="form" action="YGmodify.html" method="get">
       <div class="container text-center">
@@ -95,7 +100,7 @@
 
             <h2 id="std_name2" name="std_name"></h2>
             학번 : <p id="std_serial" name="std_serial">1301016</p>
-            <p>학과 : 컴퓨터 정보 계열 </p>
+            학과 : <p id="std_major" name="std_major">컴퓨터 정보 계열 </p>
           </div><!-- /.col-lg-4 -->
 
           <div class="col-xs-7 text-left">
@@ -104,8 +109,8 @@
           </div>
 
           <div class="col-xs-4">
-            <img class="img-circle" src="http://172.19.1.17:80/Ycard/YcardServer/public/stamp.png"
-            alt="도장 사진" style="width: 70px; height: 70px;">
+            <img class="img-circle" src="http://172.19.1.245:80/Ycard/YcardServer/public/stamp.png"
+            alt="도장 사진" style="width: 110px; height: 80px;">
           </div>
 
         </div>

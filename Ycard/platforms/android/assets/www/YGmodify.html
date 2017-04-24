@@ -60,7 +60,7 @@
 
             <p><h2>학번 :<input id="std_serial" type="text" name="std_serial" style="width:140px; height:40px;" value="aa"></p>
 
-            <p>학과 : 컴퓨터 정보 계열 </p></h2>
+            <p>학과 : <input id="std_major" type="text" name="std_major" style="width:140px; height:40px;"></p></h2>
           </div><!-- /.col-lg-4 -->
 
           <div class="col-xs-7 text-left">
@@ -70,8 +70,8 @@
           </div>
 
           <div class="col-xs-4">
-            <img class="img-circle" src="http://172.19.1.17:80/Ycard/YcardServer/public/stamp.png"
-            alt="도장 사진" style="width: 70px; height: 70px;">
+            <img class="img-circle" src="http://172.19.1.245:80/Ycard/YcardServer/public/stamp.png"
+            alt="도장 사진" style="width: 110px; height: 80px;">
           </div>
 
         </div>
@@ -85,7 +85,7 @@
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
 <!-- <<<<<<< HEAD
 <<<<<<< HEAD -->
-    <script src="./js/bootstrap.min.js"></script>
+
 <!-- =======
 >>>>>>> 292e73d79458d51154a6c1cbd6b11e03dbbd99db
 =======
@@ -109,40 +109,154 @@
           }
       }
       var request = new Request();
-
+      var stdid = "";
       $(document).ready(function() {
+
         $('#std_name').val(request.getParameter('std_name'));
-        var osnum = $('#std_serial').val(request.getParameter('std_serial'));
+        $('#std_serial').val(request.getParameter('std_serial'));
         $('#date').val(request.getParameter('date'));
         $('#std_img').attr('src',request.getParameter('std_img'));
         $('.dropdown-header').val(request.getParameter('std_name'));
-      });
+        $('#std_major').val(request.getParameter('std_major'));
+        stdid = request.getParameter('std_id');
+        var imageName = "";
 
-      $('.active').click(function(){
+        $('.active').click(function(){
+              //window.alert('버튼클릭!');
           $.ajax({
-            type : "GET",
-            url : "http://172.19.1.17:80/Ycard/YcardServer/public/updateStudent",    //서버 수정.php
-            dataType : 'jsonp',
-          //  jsonp : 'callback',         //서버에서 받는 함수명!
-                                        //적어준 함수명은 ajax 호출 url뒤에다가 파마메타 형식으로 붙음
-            data : {
-              sname   : $("#std_name").val(),
-              osnum  : osnum,
-              snum : $("#std_serial").val(),
-              date       : $("#date").val(),
-              image    : $("#std_img").attr("src"),
-            },
-            //ajax로 수정 될 값을 보내서 수정을 한다
-            //그리고 수정을 완료 하면 전 페이지로 돌아간다.
-            //pk인 학번을 사용해서
-            success : function(data){
-              console.log(data);
-              $(location).attr('href','http://172.19.1.17:80/Ycard/YcardServer/public/detail?student='+$("#std_serial").val());
-              // $(location).attr('href','http://127.0.0.1/YGdetail.html');
-            }
+                    url : "http://172.19.1.245:80/Ycard/YcardServer/public/updateStudent",    //서버 수정.php
+                    dataType : 'jsonp',
+                    jsonp : 'callback',         //서버에서 받는 함수명!
+                                                //적어준 함수명은 ajax 호출 url뒤에다가 파마메타 형식으로 붙음
+                    data : {
+                      id : stdid,
+                      sname   : $("#std_name").val(),
+                      snum : $("#std_serial").val(),
+                      date       : $("#date").val(),
+                      dname     : $("#std_major").val(),
+                      //image    : imageName,
+
+                    },
+                    //ajax로 수정 될 값을 보내서 수정을 한다
+                    //그리고 수정을 완료 하면 전 페이지로 돌아간다.
+                    //pk인 학번을 사용해서
+                    success : function(data){
+                      //window.alert('아작스성공!');
+                      console.log(data);
+                      $(location).attr('href','YGdetail.html?student='+$("#std_serial").val());
+                      // $(location).attr('href','http://127.0.0.1/YGdetail.html');
+                    },
+                    error:function(){
+                      window.alert('php오류가 발생하였습니다');
+
+                    }
+                  });
+
           });
-        });
+    });
+
+    // document.addEventListener("deviceready", onDeviceReady, false);
+    // function onDeviceReady() {
+    //   $('.active').click(function(){
+    //     window.alert('버튼누름');
+    //
+    //     uploadPhoto($("#std_img").attr("src"));
+    //
+    //     });
+    // }
+    //
+    //
+    //     function uploadPhoto(imageURI) {
+    //
+    //           window.alert('업로드시작');
+    //           window.alert(imageURI);
+    //           options = new FileUploadOptions();
+    //           window.alert('옵션만듬');
+    //           options.fileKey = "file";
+    //           window.alert('파일키');
+    //           options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+    //           window.alert('파일네임');
+    //           options.mimeType="image/jpeg";
+    //           imageName = imageURI.substr(imageURI.lastIndexOf('/')+1);
+    //           var params = new Object();
+    //           params.value1 = "test";
+    //           params.value2 = "param";
+    //           options.params = params;
+    //           options.chunkedMode = false;
+    //           window.alert('옵션 및 파람');
+    //
+    //           var ft = new FileTransfer();
+    //           window.alert('파일트랜스퍼객체 생성');
+    //           ft.upload(imageURI, encodeURI("http://172.19.1.245:80/Ycard/YcardServer/public/imgUpload"), win, fail, options);
+    //
+    //         window.alert('업로드성공');
+    //         $.ajax({
+    //           url : "http://172.19.1.245:80/Ycard/YcardServer/public/updateStudent",    //서버 수정.php
+    //           dataType : 'jsonp',
+    //           jsonp : 'callback',         //서버에서 받는 함수명!
+    //                                       //적어준 함수명은 ajax 호출 url뒤에다가 파마메타 형식으로 붙음
+    //           data : {
+    //             id : std_id,
+    //             sname   : $("#std_name").val(),
+    //             snum : $("#std_serial").val(),
+    //             date       : $("#date").val(),
+    //             dname     : $("#std_major").val(),
+    //             image    : imageName,
+    //
+    //           },
+    //           //ajax로 수정 될 값을 보내서 수정을 한다
+    //           //그리고 수정을 완료 하면 전 페이지로 돌아간다.
+    //           //pk인 학번을 사용해서
+    //           success : function(data){
+    //             window.alert('아작스성공!');
+    //             console.log(data);
+    //             $(location).attr('href','YGdetail.html?student='+$("#std_serial").val());
+    //             // $(location).attr('href','http://127.0.0.1/YGdetail.html');
+    //           },
+    //           error:function(){
+    //             window.alert('php오류가 발생하였습니다');
+    //
+    //           }
+    //         });
+    //       };
+    //
+    //       function win(r){
+    //         window.alert('업로드성공!');
+    //         // window.alert('아작스시작!');
+    //         // $.ajax({
+    //         //   url : "http://172.19.1.17:80/Ycard/YcardServer/public/updateStudent",    //서버 수정.php
+    //         //   dataType : 'jsonp',
+    //         //   jsonp : 'callback',         //서버에서 받는 함수명!
+    //         //                               //적어준 함수명은 ajax 호출 url뒤에다가 파마메타 형식으로 붙음
+    //         //   data : {
+    //         //     id : std_id,
+    //         //     sname   : $("#std_name").val(),
+    //         //     snum : $("#std_serial").val(),
+    //         //     date       : $("#date").val(),
+    //         //     image    : imageName,
+    //         //
+    //         //   },
+    //         //   //ajax로 수정 될 값을 보내서 수정을 한다
+    //         //   //그리고 수정을 완료 하면 전 페이지로 돌아간다.
+    //         //   //pk인 학번을 사용해서
+    //         //   success : function(data){
+    //         //     window.alert('아작스성공!');
+    //         //     console.log(data);
+    //         //     $(location).attr('href','YGdetail.html?student='+$("#std_serial").val());
+    //         //     // $(location).attr('href','http://127.0.0.1/YGdetail.html');
+    //         //   },
+    //         //   error:function(){
+    //         //     window.alert('php오류가 발생하였습니다');
+    //         //
+    //         //   }
+    //         // });
+    //       }
+    //
+    //       function fail(error){
+    //           window.alert("사진업로드실패");
+    //       }
 
     </script>
+
   </body>
 </html>

@@ -36,13 +36,14 @@ class Student extends Authenticatable
       return $student;
     }
 
-    public function updateStudent($sname='test',$osnum=1,$snum=1,$date='1',$image='test'){
+    public function updateStudent($sname='test',$dname='test',$id=0,$snum=1,$date='1'){
       //$student = Self::findOrFail($snum);
-       $student = Self::where('snum',$osnum)->update([
+       $student = Self::where('id',$id)->update([
          'sname' => $sname,
+         'dname' => $dname,
          'snum' => $snum,
          'date' => $date,
-         'image' => $image,
+         //'image' => $imageName,
        ]);
       // $student = Self::all();
       // $student->update([
