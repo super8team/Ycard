@@ -8,6 +8,10 @@
         "source": "C:\\Users\\bon\\Desktop\\Ycard\\Ycard\\platforms\\android\\res\\drawable-land-ldpi\\screen.png"
     },
     {
+        "merged": "D:\\JINA\\hello\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-land-ldpi\\screen.png",
+        "source": "D:\\JINA\\hello\\Ycard\\platforms\\android\\res\\drawable-land-ldpi\\screen.png"
+    },
+    {
         "merged": "D:\\android\\camera\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-land-ldpi\\screen.png",
         "source": "D:\\android\\camera\\platforms\\android\\res\\drawable-land-ldpi\\screen.png"
     }

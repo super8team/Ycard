@@ -1,6 +1,7 @@
 
 var pre_img;
-
+var options= {};
+  document.addEventListener("deviceready", onDeviceReady, false);
 function change_img(std_img_id) {
 
 
@@ -34,17 +35,19 @@ function change_img(std_img_id) {
 }
 
 
+
 function getPhoto(source) {
  // 사진 얻음
   var destinationType = navigator.camera.DestinationType;
   Camera.sourceType = source;
-  navigator.camera.getPicture(onSuccess, onFail, {quality: 50, destinationType: destinationType.FILE_URI, correctOrientation: true, sourceType: Camera.sourceType});
+  navigator.camera.getPicture(uploadPhoto, onFail, {quality: 50, destinationType: destinationType.FILE_URI, correctOrientation: true, sourceType: Camera.sourceType});
 }
 
 // 성공, 사진 수정해줌
 function onSuccess(imageData) {
   pre_img.src = imageData;
 }
+
 
 // 실패, 실패알림 메세지 띄우고 소스 초기화
 function onFail(message) {

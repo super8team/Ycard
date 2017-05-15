@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\JINA\\hello\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\icon.png",
+        "source": "D:\\JINA\\hello\\Ycard\\platforms\\android\\res\\mipmap-mdpi\\icon.png"
+    },
+    {
         "merged": "D:\\android\\camera\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\icon.png",
         "source": "D:\\android\\camera\\platforms\\android\\res\\mipmap-mdpi\\icon.png"
     },

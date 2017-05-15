@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\JINA\\hello\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-land-hdpi\\screen.png",
+        "source": "D:\\JINA\\hello\\Ycard\\platforms\\android\\res\\drawable-land-hdpi\\screen.png"
+    },
+    {
         "merged": "C:\\Users\\bon\\Desktop\\Ycard\\Ycard\\platforms\\android\\build\\intermediates\\res\\merged\\debug\\drawable-land-hdpi\\screen.png",
         "source": "C:\\Users\\bon\\Desktop\\Ycard\\Ycard\\platforms\\android\\res\\drawable-land-hdpi\\screen.png"
     },
